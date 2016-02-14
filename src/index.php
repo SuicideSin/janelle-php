@@ -23,6 +23,7 @@
 	{
 ?>
 	You are logged in!
+	<a href="logout/">Logout</a>
 <?
 	}
 ?>
