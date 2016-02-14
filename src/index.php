@@ -1,5 +1,5 @@
 <?
-	// start the session
+	session_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -9,21 +9,20 @@
 <body>
 
 <?
-	if () // check if user not logged in
+	if (!isset($_SESSION['loggedin'])) // check if user not logged in
 	{
 ?>
-<form action="login/" method="POST">
-	Username: <input type="text" name="username"><br>
-	Password: <input type="password" name="password"><br>
-	<input type="submit" value="Login">
-</form>
+	<form action="login/" method="POST">
+		Username: <input type="text" name="username"><br>
+		Password: <input type="password" name="password"><br>
+		<input type="submit" value="Login">
+	</form>
 <?
 	}
 	else
 	{
-		// tell the user they're logged in
 ?>
-
+	You are logged in!
 <?
 	}
 ?>
