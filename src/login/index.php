@@ -1,22 +1,11 @@
 <?
 /**
- * $_POST['username'] will contain the username used to login
- * $_POST['password'] will contain the password used to login
- * Check to see if the provided username exists in the users file.
- * If the username is in the users file, make sure the provided
- * password matches the password in the file.
+ * Ensure the session has started in every PHP file.
+ * If the username and password check out create a variable set to true in the $_SESSION superglobal.
+ * If the username and password do not checkout unset the variable in the $_SESSION superglobal.
  *
- * Use `file_get_contents` to read the file into a string.
- * Use `explode` to split the string into parts.
- * Use `var_dump` to output a variable to your browser for debugging.
- * Use your head for the rest.
- *
- * Useful links:
- * https://secure.php.net/manual/en/funcref.php to reference PHP functions.
- * https://secure.php.net/manual/en/function.file-get-contents.php for file_get_contents
- * https://secure.php.net/manual/en/function.var-dump.php for var_dump
- * https://secure.php.net/manual/en/function.explode.php
- * https://secure.php.net/manual/en/langref.php to better understand PHP.
+ * In src/index.php, only output the form if $_SESSION['loggedin'] is not set.
+ * Otherwise, just output "You are logged in."
  */
 
 	$data = file_get_contents('users');
