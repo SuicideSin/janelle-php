@@ -20,4 +20,24 @@
  */
 
 	$data = file_get_contents('users');
-	var_dump($data);
+	$users = explode("\n", $data);
+	$loggedin = false;
+
+	foreach ($users as $key => $value)
+	{
+		$userpassword = explode(":", $value);
+		if ($userpassword[0] == $_POST['username'] && $userpassword[1] == $_POST['password'])
+		{
+			$loggedin = true;
+			break;
+		}
+	}
+
+	if ($loggedin)
+	{
+		echo "Welcome!";
+	}
+	else
+	{
+		echo "Wrong username or password.";
+	}
