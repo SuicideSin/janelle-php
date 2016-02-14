@@ -17,5 +17,6 @@ module.exports = function(grunt)
 	grunt.registerTask('dev', ['exec:run_dev']);
 	grunt.registerTask('start', ['exec:run']);
 
-	grunt.registerTask('default', ['exec:build']);
+	grunt.registerTask('build', ['exec:build']);
+	grunt.registerTask('default', ['build']);
 };
